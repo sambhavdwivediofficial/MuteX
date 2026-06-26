@@ -1,0 +1,51 @@
+[package]
+name = "Mutex"
+version = "0.1.0"
+description = "Local-first desktop app for muting video files"
+authors = ["MuteX Contributors"]
+license = "MIT"
+repository = "https://github.com/your-org/mutex"
+edition = "2021"
+rust-version = "1.77"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix enables the library crate to be built correctly by Tauri
+name = "mutex_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# Tauri core
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-shell = "2"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Error handling
+thiserror = "1"
+anyhow = "1"
+
+# Logging
+log = "0.4"
+tauri-plugin-log = "2"
+
+# Path utilities (cross-platform)
+dirs = "5"
+
+[profile.release]
+# Optimize for size and speed in production
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

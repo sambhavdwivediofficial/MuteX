@@ -1,0 +1,32 @@
+# Rust / Cargo
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Node / npm
+node_modules/
+dist/
+.vite/
+.github
+
+# Tauri
+src-tauri/target/
+src-tauri/WixTools/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+*.deb
+*.AppImage
+*.dmg
+*.msi
+*.exe
+*.app
