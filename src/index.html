@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MuteX</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+
+      <header class="titlebar">
+        <div class="titlebar__logo">
+          <img src="./assets/icons/logo.png" class="titlebar__logo-img" alt="MuteX" />
+          <span class="titlebar__name">MuteX</span>
+        </div>
+        <span class="titlebar__version">v0.1.0</span>
+      </header>
+
+      <main class="main">
+
+        <div class="dropzone-wrapper">
+          <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Select video files">
+            <svg class="dropzone__icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="7" width="32" height="22" rx="3.5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14 12.5L24 18L14 23.5V12.5Z" fill="currentColor"/>
+              <path d="M25 12V24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="27" y1="9.5" x2="34" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="30.5" y1="6" x2="30.5" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <p class="dropzone__label">
+              <strong>Drop video files here</strong>
+              or click to browse
+            </p>
+            <span class="dropzone__formats">mp4 · mkv · mov · avi · webm · flv · ts · m4v · wmv</span>
+          </div>
+        </div>
+
+        <div id="file-list" class="file-list" role="list" aria-label="Selected files"></div>
+
+        <div class="toolbar">
+          <button id="output-picker" class="output-picker" type="button" aria-label="Select output folder">
+            <svg class="output-picker__icon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 3.5C1 2.67 1.67 2 2.5 2H6L7.5 3.5H12.5C13.33 3.5 14 4.17 14 5V11.5C14 12.33 13.33 13 12.5 13H2.5C1.67 13 1 12.33 1 11.5V3.5Z" stroke="currentColor" stroke-width="1.25"/>
+            </svg>
+            <span id="output-picker-text" class="output-picker__text">Select output folder…</span>
+          </button>
+          <button id="clear-btn" class="btn btn--ghost" type="button" disabled>Clear</button>
+          <button id="mute-btn" class="btn btn--primary" type="button" disabled>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2L12 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M9 3C9 3 11 4.5 11 7C11 8.2 10.5 9.3 9.7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M6.5 1.5C5.1 1.5 4 2.4 4 4V7L7 10C8.2 9.5 9 8.3 9 7V4C9 2.4 7.9 1.5 6.5 1.5Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Mute Videos
+          </button>
+        </div>
+
+      </main>
+
+      <footer class="statusbar">
+        <span id="status-text" class="statusbar__text">Ready</span>
+        <div class="statusbar__ffmpeg">
+          <div id="ffmpeg-dot" class="status-dot"></div>
+          <span id="ffmpeg-status">Checking FFmpeg…</span>
+        </div>
+      </footer>
+
+    </div>
+
+    <script type="module" src="./scripts/main.ts"></script>
+  </body>
+</html>

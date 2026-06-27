@@ -8,6 +8,10 @@ repository = "https://github.com/your-org/mutex"
 edition = "2021"
 rust-version = "1.77"
 
+[package.metadata.bundle]
+identifier = "com.mutex.app"
+icon = ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
@@ -41,6 +45,7 @@ tauri-plugin-log = "2"
 
 # Path utilities (cross-platform)
 dirs = "5"
+which = "6"
 
 [profile.release]
 # Optimize for size and speed in production

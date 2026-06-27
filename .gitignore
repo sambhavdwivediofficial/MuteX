@@ -2,6 +2,7 @@
 target/
 **/*.rs.bk
 Cargo.lock
+src-tauri/icons
 
 # Node / npm
 node_modules/
